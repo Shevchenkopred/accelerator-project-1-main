@@ -1,0 +1,154 @@
+.contacts {
+  @include desktope-screen {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.contacts__form-wrapper {
+  background-color: $color-background-dark;
+  color: $color-text-dark-background;
+  word-break: break-word;
+
+  @include desktope-screen {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+.contacts__wrapper-address {
+  width: 320px;
+  margin-inline: auto;
+  padding: 38px 15px 40px;
+  word-break: break-word;
+
+  @include tablet-screen {
+    width: 440px;
+    padding: 60px 0 59px;
+  }
+
+  @include desktope-screen {
+    width: 100%;
+    border-top: 1px solid $color-border-underline;
+  }
+}
+
+.contacts__title {
+  margin: 0 0 37px;
+  font-family: $font-family-secondary;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1;
+
+  @include tablet-screen {
+    font-size: 54px;
+    text-align: center;
+  }
+
+  @include desktope-screen {
+    margin: 0 0 35px 103px;
+    width: 477px;
+    text-align: left;
+  }
+}
+
+.contacts__list {
+  @include list-reset;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 27px;
+
+  @include tablet-screen {
+    position: relative;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 13px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      width: 1px;
+      height: 100%;
+      background-color: $color-border-underline;
+
+      @include desktope-screen {
+        translate: -50% 0;
+      }
+    }
+  }
+
+  @include desktope-screen {
+    row-gap: 14px;
+    width: 477px;
+    margin-left: 103px;
+  }
+}
+
+.contacts__item {
+  display: flex;
+  flex-direction: column;
+  row-gap: 13px;
+
+  @include tablet-screen {
+    row-gap: 6px;
+    width: 190px;
+  }
+
+  @include desktope-screen {
+    width: 179px;
+  }
+}
+
+.contacts__item:has(.contacts__item-text--work-opening) {
+  @include tablet-screen {
+    order: 1;
+  }
+}
+
+.contacts__item:has(.contacts__item-link--email) {
+  @include tablet-screen {
+    order: 2;
+  }
+}
+
+.contacts__item-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1;
+
+  @include tablet-screen {
+    font-size: 24px;
+  }
+}
+
+.contacts__item-text {
+  margin: 0;
+  font-weight: 400;
+  line-height: 1.4;
+
+  @include tablet-screen {
+    line-height: 1.57;
+  }
+}
+
+.contacts__item-link {
+  transition: opacity 0.2s;
+
+  &:hover,
+  &:focus {
+    color: rgba(16, 38, 84, 0.7);
+  }
+
+  &:focus-visible {
+    outline: 1px solid $color-button-outline-main;
+    outline-offset: 5px;
+  }
+
+  &:active {
+    color: inherit;
+  }
+}

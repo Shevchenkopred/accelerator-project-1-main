@@ -1,0 +1,177 @@
+.accordion {
+  border-top: 1px solid $color-border-underline;
+
+  &:last-child {
+    border-bottom: 1px solid $color-border-underline;
+  }
+
+  &:has(.accordion__details[open]) {
+    margin-bottom: 10px;
+
+    @include tablet-screen {
+      margin-bottom: 14px;
+    }
+
+    @include desktope-screen {
+      margin-bottom: 12px;
+    }
+  }
+}
+
+.accordion__details[open] + .accordion__content-wrapper {
+  grid-template-rows: 1fr;
+}
+
+.accordion__details[open] .accordion__summary {
+  &::after {
+    background-color: $color-background-block;
+  }
+
+  &::before {
+    height: 2px;
+    mask-image: url("/__spritemap#sprite-faq-minus-view");
+    background-color: $color-icon-main;
+  }
+
+  @include tablet-screen {
+    padding-block: 24px 10px;
+  }
+
+  @include desktope-screen {
+    padding-block: 22px 25px;
+  }
+}
+
+.accordion__summary {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 10px;
+  padding-block: 20px;
+  list-style-type: none;
+  cursor: pointer;
+
+  &::after {
+    content: "";
+    flex-shrink: 0;
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: 1px solid $color-button-outline-secondary;
+    border-radius: 100%;
+    transition: background-color 0.2s;
+
+    @include tablet-screen {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    right: 8px;
+    width: 14px;
+    height: 14px;
+    mask-image: url("/__spritemap#sprite-faq-plus-view");
+    background-color: $color-icon-white-background;
+    transition: background-color 0.2s;
+
+    @include tablet-screen {
+      right: 10px;
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &[aria-disabled="true"] {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+
+  &:hover::after {
+    background-color: $color-background-block;
+  }
+
+  &:focus::after {
+    background-color: $color-border-underline;
+    border: 1px solid $color-button-outline-secondary;
+  }
+
+  &[aria-disabled="true"]::after {
+    border: 1px solid $color-button-outline-secondary;
+  }
+
+  &:hover::before,
+  &:focus::before {
+    background-color: $color-icon-main;
+  }
+
+  &[aria-disabled="true"]::before {
+    background-color: $color-icon-white-background;
+  }
+
+  @include tablet-screen {
+    padding-block: 24px 22px;
+  }
+
+  @include desktope-screen {
+    padding-block: 23px 22px;
+  }
+}
+
+.accordion__summary h2 {
+  margin: 0;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1;
+
+  @include tablet-screen {
+    width: 586px;
+    font-size: 22px;
+  }
+
+  @include desktope-screen {
+    width: auto;
+    font-size: 24px;
+  }
+}
+
+.accordion__summary br {
+  @include tablet-screen {
+    display: none;
+  }
+}
+
+.accordion__content-wrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s;
+}
+
+.accordion__content-wrapper-hidden {
+  overflow: hidden;
+
+  & * {
+    margin: 0;
+    margin-bottom: 10px;
+  }
+}
+
+.accordion__content-wrapper-hidden p {
+  width: 264px;
+  font-size: 16px;
+  line-height: 1.25;
+
+  @include tablet-screen {
+    width: 570px;
+    font-size: 18px;
+    line-height: 1.3;
+  }
+
+  @include desktope-screen {
+    width: 660px;
+  }
+}

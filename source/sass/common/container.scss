@@ -1,0 +1,15 @@
+.container {
+  width: $container-width-mobile;
+  margin-inline: auto;
+  padding-inline: $container-padding-mobile-x;
+
+  @include tablet-screen {
+    width: $container-width-tablet;
+    padding-inline: $container-padding-tablet-x;
+  }
+
+  @include desktope-screen {
+    width: $container-width-desktope;
+    padding-inline: $container-padding-desktope-x;
+  }
+}

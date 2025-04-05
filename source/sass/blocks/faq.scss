@@ -1,0 +1,125 @@
+.faq {
+  padding-block: 70px;
+  background-color: $color-background-secondary;
+
+  @include tablet-screen {
+    padding-block: 60px;
+  }
+
+  @include desktope-screen {
+    padding-block: 100px;
+  }
+}
+
+.faq__container {
+  @include desktope-screen {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr;
+    column-gap: 40px;
+  }
+}
+
+.faq__title {
+  margin: 0 0 35px;
+  font-family: $font-family-secondary;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+
+  @include tablet-screen {
+    margin-bottom: 45px;
+    font-size: 42px;
+  }
+
+  @include desktope-screen {
+    grid-column: 1 / -1;
+    margin-bottom: 50px;
+    font-size: 54px;
+    text-align-last: left;
+  }
+}
+
+.faq__navigation-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 10px;
+  margin-bottom: 35px;
+
+  @include tablet-screen {
+    margin-bottom: 45px;
+  }
+
+  @include desktope-screen {
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 0;
+    width: 260px;
+  }
+}
+
+.faq__button-tab {
+  padding: 14px;
+  min-height: 46px;
+  width: 140px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1;
+  color: inherit;
+  background-color: transparent;
+  border: 1px solid $color-button-opacity-02;
+  cursor: pointer;
+  transition: border-color 0.2s, background-color 0.2s;
+
+  &:hover {
+    border-color: $color-button-outline-main;
+  }
+
+  &:focus {
+    background-color: $color-background-main;
+    border-color: $color-button-outline-main;
+  }
+
+  &:disabled {
+    color: #c8c9cc;
+    pointer-events: none;
+  }
+
+  @include tablet-screen {
+    width: 162px;
+    min-height: 54px;
+    font-size: 18px;
+  }
+
+  @include desktope-screen {
+    width: 100%;
+  }
+}
+
+.faq__button-tab--active {
+  background: $color-button-gradient;
+  background-color: $color-background-block;
+  color: $color-text-dark-background;
+  border: none;
+
+  &:disabled {
+    background: none;
+    border: 1px solid rgba(16, 38, 84, 0.2);
+  }
+}
+
+.faq__tab-content-wrraper {
+  @include desktope-screen {
+    margin-top: -1px;
+  }
+}
+
+.faq__accardion {
+  display: none;
+
+  &--active {
+    display: block;
+  }
+}

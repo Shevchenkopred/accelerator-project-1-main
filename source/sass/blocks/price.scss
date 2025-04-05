@@ -1,0 +1,332 @@
+.price {
+  padding-block: 41px 40px;
+  background-color: $color-background-secondary;
+  word-break: break-word;
+
+  @include tablet-screen {
+    background-image:
+      image-set(
+        url("../../img/price-decor-pancakes-tablet@2x.webp") type("image/webp") 2x,
+        url("../../img/price-decor-pancakes-tablet@1x.webp") type("image/webp") 1x,
+        url("../../img/price-decor-pancakes-tablet@2x.png") type("image/png") 2x,
+        url("../../img/price-decor-pancakes-tablet@1x.png") type("image/png") 1x,
+      );
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    padding-block: 60px;
+  }
+
+  @include desktope-screen {
+    background-image:
+      image-set(
+        url("../../img/price-decor-pancakes-desktope@2x.webp") type("image/webp") 2x,
+        url("../../img/price-decor-pancakes-desktope@1x.webp") type("image/webp") 1x,
+        url("../../img/price-decor-pancakes-desktope@2x.png") type("image/png") 2x,
+        url("../../img/price-decor-pancakes-desktope@1x.png") type("image/png") 1x,
+      );
+    padding-block: 100px;
+  }
+}
+
+.price__title {
+  margin: 0 0 31px;
+  font-size: 32px;
+  font-weight: 600;
+  font-family: $font-family-secondary;
+  line-height: 1;
+  text-align: center;
+
+  @include tablet-screen {
+    margin-bottom: 37px;
+    font-size: 42px;
+  }
+
+  @include desktope-screen {
+    margin-bottom: 20px;
+    font-size: 54px;
+  }
+}
+
+.price__navigation-tabs {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 46px;
+  margin-bottom: 30px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: $color-border-main;
+  }
+
+  @include tablet-screen {
+    column-gap: 44px;
+    width: 311px;
+    margin: 0 auto 45px;
+  }
+
+  @include desktope-screen {
+    column-gap: 51px;
+    width: 350px;
+    margin-bottom: 40px;
+  }
+}
+
+.price__button-tabs {
+  padding: 0 0 6px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1;
+  color: $color-button-opacity;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.3s;
+
+  &:hover:not(.price__button-tabs--active) {
+    color: rgba(16, 38, 84, 0.7);
+    border-color: #787878;
+  }
+
+  &:focus:not(.price__button-tabs--active) {
+    color: $color-text-main;
+    border-color: $color-button-outline-main;
+  }
+
+  &:focus-visible {
+    outline: 1px solid $color-button-outline-main;
+    outline-offset: 5px;
+  }
+
+  &:disabled {
+    opacity: 0.3;
+    pointer-events: none;
+    border-color: $color-button-outline-main;
+    color: $color-text-main;
+  }
+
+  &--active {
+    position: relative;
+    z-index: 2;
+    color: inherit;
+    border-bottom: 2px solid $color-button-tabs;
+  }
+
+  @include tablet-screen {
+    font-size: 18px;
+  }
+
+  @include desktope-screen {
+    padding-bottom: 8px;
+    font-size: 20px;
+  }
+}
+
+.price__tab {
+  display: none;
+
+  &--active {
+    display: block;
+  }
+}
+
+.price__list {
+  @include list-reset;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 35px;
+
+  @include tablet-screen {
+    row-gap: 40px;
+    max-width: 380px;
+    margin-inline: auto;
+  }
+
+  @include desktope-screen {
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 40px;
+    max-width: 100%;
+  }
+}
+
+.price__item {
+  display: flex;
+  flex-direction: column;
+  padding-block: 44px 43px;
+  padding-inline: 13px;
+  background-color: $color-background-main;
+  border: 7px solid transparent;
+  align-items: center;
+
+  &:has(.price__item-link:focus, .price__item-link:hover) {
+    border-image: $color-button-outline-gradient;
+    border-image-slice: 4;
+  }
+
+  @include tablet-screen {
+    padding-block: 58px;
+  }
+
+  @include desktope-screen {
+    width: 360px;
+  }
+}
+
+.price__item-title {
+  margin: 0 0 21px;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1;
+
+  @include tablet-screen {
+    font-size: 24px;
+  }
+
+  @include desktope-screen {
+    margin-bottom: 17px;
+    font-size: 26px;
+  }
+}
+
+.price__item-subtitle {
+  display: inline-block;
+  margin: 0 0 19px;
+
+  @include tablet-screen {
+    margin-bottom: 22px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  @include desktope-screen {
+    margin-bottom: 17px;
+  }
+}
+
+.price__item-content-value {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  min-height: 120px;
+  margin-bottom: 19px;
+
+  @include tablet-screen {
+    min-height: 150px;
+    margin-bottom: 23px;
+  }
+
+  @include desktope-screen {
+    margin-bottom: 17px;
+  }
+}
+
+.price__item-price-back {
+  @include translate-center;
+
+  position: absolute;
+  max-width: 281px;
+  max-height: 120px;
+  overflow: hidden;
+  font-size: 80px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: $color-text-back-price;
+  opacity: 0.48;
+  word-break: normal;
+
+  @include tablet-screen {
+    max-height: 150px;
+    font-size: 100px;
+  }
+}
+
+.price__item-value {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  z-index: 2;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: $color-text-accent;
+
+  &::after {
+    content: "";
+    flex-shrink: 0;
+    width: 24px;
+    height: 33px;
+    mask-image: url("/__spritemap#sprite-price-ruble-view");
+    mask-repeat: no-repeat;
+    background-color: $color-icon-secondary;
+
+    @include tablet-screen {
+      width: 30px;
+      height: 42px;
+    }
+  }
+
+  @include tablet-screen {
+    column-gap: 14px;
+    font-size: 60px;
+  }
+}
+
+.price__item-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 66px;
+  width: 206px;
+  padding: 10px;
+  margin-top: auto;
+  border: 2px solid $color-button-outline-main;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+  transition: color 0.2s;
+
+  &:hover {
+    background: $color-button-gradient;
+    color: $color-text-dark-background;
+    border: none;
+  }
+
+  &:focus {
+    background: linear-gradient(151deg, rgba(237, 2, 51, 0.8) 0%, rgba(0, 62, 183, 0.8) 100%);
+    color: $color-text-dark-background;
+    border-color: #000000;
+  }
+
+  &:focus-visible {
+    outline: none;
+  }
+
+  &:active {
+    background: $color-button-gradient;
+    color: rgba(255, 255, 255, 0.7);
+    border: none;
+  }
+
+  &[aria-disabled="true"] {
+    color: rgba(16, 38, 84, 0.3);
+    border-color: rgba(16, 38, 84, 0.3);
+    pointer-events: none;
+  }
+
+  @include tablet-screen {
+    width: 250px;
+  }
+
+  @include desktope-screen {
+    width: 230px;
+  }
+}

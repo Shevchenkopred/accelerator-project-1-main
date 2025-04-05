@@ -1,0 +1,154 @@
+.reviews {
+  padding-block: 40px;
+  text-align: center;
+
+  @include tablet-screen {
+    padding-block: 60px;
+  }
+
+  @include desktope-screen {
+    padding-block: 100px;
+  }
+}
+
+.reviews__title {
+  margin: 0 0 40px;
+  font-family: $font-family-secondary;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1;
+
+  @include tablet-screen {
+    margin-bottom: 35px;
+    font-size: 54px;
+  }
+
+  @include desktope-screen {
+    margin-bottom: 75px;
+  }
+}
+
+.reviews__wrraper-content {
+  position: relative;
+}
+
+.reviews__swiper {
+  width: 240px;
+  background-color: $color-background-block;
+
+  @include tablet-screen {
+    width: 500px;
+  }
+
+  @include desktope-screen {
+    width: 560px;
+  }
+}
+
+.reviews__list {
+  @include list-reset;
+}
+
+.reviews__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 240px;
+  padding: 30px 20px 23px;
+  background-color: $color-background-block;
+  color: $color-text-dark-background;
+  box-shadow: 0 0 40px 0 rgba(28, 51, 116, 0.2);
+
+  * {
+    margin-bottom: 5px;
+  }
+
+  @include tablet-screen {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    grid-template-rows: minmax(22px, auto) 1fr;
+    column-gap: 10px;
+    padding-bottom: 39px;
+    text-align: left;
+  }
+
+  @include desktope-screen {
+    column-gap: 30px;
+    padding-block: 50px 59px;
+  }
+}
+
+.reviews__picture {
+  @include tablet-screen {
+    grid-row: 1 / 3;
+    align-self: flex-start;
+    margin: 10px 0 0 10px;
+  }
+
+  @include desktope-screen {
+    justify-self: end;
+  }
+}
+
+.reviews__item img {
+  width: 68px;
+  height: 68px;
+
+  @include tablet-screen {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.reviews__item h3 {
+  margin: 0 0 4px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.1;
+
+  @include tablet-screen {
+    margin: 11px 0 0;
+    font-size: 22px;
+    line-height: 1;
+  }
+}
+
+.reviews__item p {
+  width: 190px;
+  line-height: 1.57;
+
+  @include tablet-screen {
+    grid-column: 2 / 3;
+    width: 320px;
+    margin: 20px 0 0;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  @include desktope-screen {
+    width: 330px;
+  }
+}
+
+.reviews__button-prev.slider-navigation--prev {
+  @include tablet-screen {
+    left: -17px;
+  }
+
+  @include desktope-screen {
+    left: 179px;
+    top: 50%;
+  }
+}
+
+.reviews__button-next.slider-navigation--next {
+  @include tablet-screen {
+    right: -17px;
+  }
+
+  @include desktope-screen {
+    right: 179px;
+    top: 50%;
+  }
+}

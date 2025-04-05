@@ -1,0 +1,30 @@
+@mixin list-reset {
+  padding-left: 0;
+  margin-block: 0;
+  list-style-type: none;
+}
+
+@mixin text-gradient {
+  background: $color-text-gradient-accent;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Media */
+@mixin tablet-screen {
+  @media (min-width: $tablet-width) {
+    @content;
+  }
+}
+
+@mixin desktope-screen {
+  @media (min-width: $desktope-width) {
+    @content;
+  }
+}
+
+@mixin translate-center {
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}

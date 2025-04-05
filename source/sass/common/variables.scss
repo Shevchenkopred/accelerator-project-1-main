@@ -1,0 +1,68 @@
+
+/* fonts */
+$font-family-main: "RobotoCondensed", sans-serif;
+$font-family-secondary: "AlumniSans", sans-serif;
+
+/* colors text */
+$color-text-main: #102654;
+$color-text-dark-background: #ffffff;
+$color-text-accent: #103aae;
+$color-text-gradient: linear-gradient(129deg, #d10a42 0%, #0041ca 100%);
+$color-text-gradient-accent: linear-gradient(129deg, #d10a42 3%, #0041ca 40%);
+$color-text-back-price: #e8e8e8;
+$color-text-small: #2e35ac;
+$color-text-dark: #1c3374;
+
+/* colors button */
+$color-button-outline-dark-background: #ffffff;
+$color-button-outline-main: #102654;
+$color-button-outline-secondary: #1c3374;
+$color-button-outline-gradient: linear-gradient(136deg, #d10a42 0%, #00359f 100%);
+$color-button-gradient: linear-gradient(151deg, #ed0233 0%, #003eb7 100%);
+$color-button-tabs: #d10a42;
+$color-button-border: #ed0233;
+$color-button-opacity: rgba(16, 38, 84, 0.5);
+$color-button-opacity-02: rgba(16, 38, 84, 0.2);
+
+/* colors background */
+$color-background-main: #ffffff;
+$color-background-secondary: #f8f9fc;
+$color-background-banners: #ed0233;
+$color-background-dark: #102654;
+$color-background-main-gradient: linear-gradient(90deg, #1c3477 0%, #1c3477 0.01%, #1a3578 39.11%, #73184b 75.5%, #b4022a 100%);
+$color-background-footer: #030a1a;
+$color-background-block: #1c3374;
+$color-background-opacity: rgba(20, 54, 122, 0.5);
+
+/* colors icon */
+$color-icon-main: #ffffff;
+$color-icon-secondary: #102654;
+$color-icon-white-background: #1c3374;
+$color-icon-social: #030a1a;
+
+/* colors form */
+$color-form-main: #ffffff;
+$color-form-error: #ff121f;
+
+/* colors border */
+$color-border-secondary: #ffffff;
+$color-border-main: rgba(120, 120, 120, 0.2);
+$color-border-active: rgb(209, 10, 66);
+$color-border-active-opacity: rgba(209, 10, 66, 0.2);
+$color-border-underline: #74819c;
+$color-border-gradient: linear-gradient(136deg, #d10a42 0%, #00359f 100%);
+
+/* color shadow */
+$color-shadow-main: rgba(28, 51, 116, 0.2);
+
+/* container size */
+$container-width-desktope: 1366px;
+$container-width-tablet: 768px;
+$container-width-mobile: 320px;
+$container-padding-mobile-x: 15px;
+$container-padding-tablet-x: 45px;
+$container-padding-desktope-x: 103px;
+
+/* width screen */
+$tablet-width: 768px;
+$desktope-width: 1366px;

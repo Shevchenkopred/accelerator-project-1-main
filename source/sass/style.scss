@@ -1,0 +1,31 @@
+// Vendor
+@import "vendor/normalize";
+@import "vendor/swiper";
+
+// common
+@import "common/variables";
+@import "common/mixins";
+@import "common/fonts";
+@import "common/globals";
+@import "common/container";
+@import "common/visually-hidden";
+
+// block
+@import "blocks/button-action";
+@import "blocks/hero";
+@import "blocks/logo";
+@import "blocks/iframe";
+@import "blocks/about";
+@import "blocks/content-cms";
+@import "blocks/price";
+@import "blocks/games";
+@import "blocks/jury";
+@import "blocks/features";
+@import "blocks/offers";
+@import "blocks/faq";
+@import "blocks/accordion";
+@import "blocks/reviews";
+@import "blocks/slider-navigation";
+@import "blocks/contacts";
+@import "blocks/form";
+@import "blocks/footer";

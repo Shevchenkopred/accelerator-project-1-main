@@ -1,0 +1,143 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 38px;
+  width: 290px;
+  margin-inline: auto;
+  padding-block: 70px;
+
+  @include tablet-screen {
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 30px;
+    width: 440px;
+    padding-block: 60px;
+  }
+
+  @include desktope-screen {
+    justify-content: flex-start;
+    margin: 0 103px 0 0;
+    width: 477px;
+  }
+}
+
+.form__title {
+  margin: 0;
+  font-family: $font-family-secondary;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1;
+
+  @include tablet-screen {
+    font-size: 54px;
+    text-align: center;
+  }
+}
+
+.form__wrapper-input {
+  position: relative;
+}
+
+.form__input {
+  width: 100%;
+  padding-inline: 4px;
+  line-height: 1.57;
+  background-color: transparent;
+  color: $color-text-dark-background;
+  border: none;
+  border-bottom: 1px solid $color-border-underline;
+  transition: border-color 0.2s;
+
+  &::placeholder {
+    font-weight: 300;
+    color: $color-text-dark-background;
+    opacity: 0.4;
+
+    @include tablet-screen {
+      font-weight: 400;
+    }
+  }
+
+  &:disabled {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+
+  &:disabled::placeholder {
+    opacity: 0.4;
+  }
+
+  &:focus::placeholder {
+    opacity: 0;
+  }
+
+  &:hover {
+    border-color: $color-button-outline-dark-background;
+  }
+
+  &:focus {
+    outline: 1px solid $color-button-outline-dark-background;
+    border-color: transparent;
+  }
+
+  @include tablet-screen {
+    width: 205px;
+    font-weight: 400;
+  }
+
+  @include desktope-screen {
+    width: 223px;
+  }
+}
+
+.form__wrapper-input .form__input--invalid {
+  border-color: $color-form-error;
+  outline: none;
+
+  &:hover {
+    border-color: $color-form-error;
+  }
+
+  &:focus {
+    border-color: $color-form-error;
+    outline: none;
+  }
+}
+
+.form__input--invalid + .form__input-error {
+  display: block;
+}
+
+.form__input-error {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 32px;
+  max-height: 35px;
+  font-weight: 400;
+  color: $color-form-error;
+  overflow: hidden;
+}
+
+.form__submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60px;
+  padding: 20px;
+  margin-top: -2px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  background-color: transparent;
+  color: $color-text-dark-background;
+  border: 2px solid $color-border-secondary;
+  text-transform: uppercase;
+
+  @include tablet-screen {
+    width: 100%;
+    min-height: 66px;
+    margin-top: -3px;
+  }
+}

@@ -1,0 +1,35 @@
+.button-action {
+  transition: color 0.2s, background-color 0.2s, border 0.2s;
+
+  &:hover {
+    color: $color-text-accent;
+    background-color: $color-background-main;
+  }
+
+  &:focus {
+    color: $color-text-accent;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 2px solid #000000;
+  }
+
+  &:focus-visible {
+    outline: 1px solid $color-border-secondary;
+  }
+
+  &:active {
+    color: $color-text-main;
+    background-color: $color-background-main;
+  }
+
+  &[aria-disabled="true"] {
+    color: $color-text-dark-background;
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  &:disabled {
+    color: $color-text-dark-background;
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}

@@ -1,0 +1,80 @@
+.slider-navigation {
+  display: none;
+
+  @include tablet-screen {
+    position: absolute;
+    top: 50%;
+    translate: 0 -50%;
+    display: block;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background-color: transparent;
+    cursor: pointer;
+    transition: outline 0.2s, background-color 0.2s;
+
+    &:hover {
+      outline: 1px solid $color-icon-secondary;
+    }
+
+    &:focus {
+      background-color: $color-text-back-price;
+      outline: 1px solid $color-icon-secondary;
+    }
+
+    &:focus-visible {
+      outline: 1px solid $color-icon-secondary;
+    }
+
+    &:active {
+      background-color: $color-background-dark;
+    }
+
+    &:active::after {
+      background-color: $color-icon-main;
+    }
+
+    &:disabled {
+      pointer-events: none;
+    }
+
+    &:disabled::after {
+      background-color: rgba(16, 38, 84, 0.3);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+      width: 18px;
+      height: 32px;
+      background-color: $color-icon-secondary;
+      mask-image: url("/__spritemap#sprite-slide-arrow-view");
+    }
+
+    &--next {
+      right: -11px;
+      rotate: 180deg;
+    }
+
+    &--prev {
+      left: -11px;
+    }
+  }
+
+  @include desktope-screen {
+    top: 49%;
+
+    &--prev {
+      left: -69px;
+    }
+
+    &--next {
+      right: -71px;
+    }
+  }
+}

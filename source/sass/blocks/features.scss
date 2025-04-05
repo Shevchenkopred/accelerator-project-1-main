@@ -1,0 +1,242 @@
+.features {
+  padding-block: 40px 27px;
+  background-color: $color-background-secondary;
+  text-align: center;
+
+  @include tablet-screen {
+    padding-block: 60px;
+  }
+
+  @include desktope-screen {
+    padding-block: 100px;
+  }
+}
+
+.features__title {
+  margin: 0 0 40px;
+  font-family: $font-family-secondary;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1;
+
+  @include tablet-screen {
+    font-size: 42px;
+    margin-bottom: 50px;
+  }
+
+  @include desktope-screen {
+    font-size: 54px;
+  }
+}
+
+.features__list {
+  @include list-reset;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 23px;
+
+  @include tablet-screen {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 41px 30px;
+    width: 678px;
+    margin-inline: auto;
+  }
+
+  @include desktope-screen {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: minmax(149px, auto) 1fr;
+    gap: 0 40px;
+    width: 1160px;
+  }
+}
+
+.features__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 20px;
+
+  @include tablet-screen {
+    padding: 0;
+  }
+}
+
+.features__item span {
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1;
+
+  @include tablet-screen {
+    font-size: 70px;
+  }
+}
+
+.features__item small {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: $color-text-small;
+
+  @include tablet-screen {
+    line-height: 1.5;
+  }
+}
+
+.features__item h3 {
+  margin: 0;
+}
+
+.features__item p {
+  width: 230px;
+  margin: 0;
+  line-height: 1.5;
+
+  @include tablet-screen {
+    width: auto;
+    font-size: 16px;
+  }
+}
+
+.features__item:not(.features__item--accent) {
+  & * {
+    margin-bottom: 13px;
+  }
+
+  @include tablet-screen {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr;
+    align-items: start;
+    column-gap: 15px;
+    width: 324px;
+    text-align: left;
+  }
+
+  @include desktope-screen {
+    grid-template-columns: 150px 1fr;
+    grid-template-rows: minmax(22px, auto) 1fr;
+    column-gap: 0;
+    width: 360px;
+    height: auto;
+  }
+}
+
+.features__item:not(.features__item--accent) span {
+  @include text-gradient;
+
+  display: flex;
+  flex-direction: column;
+  background-color: $color-background-block;
+
+  @include tablet-screen {
+    grid-row: 1 / 3;
+    align-items: flex-start;
+    margin-bottom: 0;
+  }
+}
+
+.features__item:not(.features__item--accent) h3 {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.1;
+
+  @include tablet-screen {
+    margin-bottom: 0;
+    font-size: 20px;
+    line-height: 1;
+  }
+
+  @include desktope-screen {
+    font-size: 22px;
+  }
+}
+
+.features__item:not(.features__item--accent) small {
+  margin: 0;
+}
+
+.features__item:not(.features__item--accent) p {
+  @include tablet-screen {
+    grid-column: 2 / 3;
+    margin-bottom: 0;
+  }
+
+  @include desktope-screen {
+    margin-top: 8px;
+  }
+}
+
+.features__item--accent {
+  margin-block: 3px 18px;
+  padding-block: 30px 42px;
+  background-color: $color-background-block;
+  color: $color-text-dark-background;
+
+  & * {
+    margin-bottom: 10px;
+  }
+
+  @include tablet-screen {
+    grid-column: 1 / -1;
+    justify-self: center;
+    row-gap: 25px;
+    width: 320px;
+    margin: 0;
+    padding-block: 35px;
+  }
+
+  @include desktope-screen {
+    grid-column: 2 / 3;
+    grid-row: 1 / 4;
+    justify-content: start;
+    row-gap: 10px;
+    width: 360px;
+    padding-block: 58px;
+  }
+}
+
+.features__item--accent p {
+  @include tablet-screen {
+    width: 260px;
+  }
+
+  @include desktope-screen {
+    width: 280px;
+  }
+}
+
+.features__item--accent h3 {
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1;
+
+  @include tablet-screen {
+    margin-bottom: 0;
+    font-size: 24px;
+  }
+
+  @include desktope-screen {
+    margin-bottom: 20px;
+    font-size: 26px;
+  }
+}
+
+.features__item--accent span {
+  display: inline-block;
+  margin-bottom: 5px;
+
+  @include tablet-screen {
+    margin-bottom: 0;
+  }
+}
+
+.features__item--border-position {
+  @include desktope-screen {
+    grid-row: span 2;
+    padding-top: 40px;
+    border-top: 2px solid $color-border-active-opacity;
+  }
+}

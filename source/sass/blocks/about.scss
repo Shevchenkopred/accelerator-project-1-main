@@ -1,0 +1,126 @@
+.about {
+  padding-block: 41px 40px;
+
+  @include tablet-screen {
+    position: relative;
+    margin-inline: auto;
+    padding-inline: $container-padding-tablet-x;
+    padding-block: 60px 84px;
+  }
+
+  @include desktope-screen {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: $container-width-desktope;
+    padding-inline: $container-padding-desktope-x;
+    padding-block: 120px 204px;
+  }
+}
+
+.about__content-wrapper {
+  padding-inline: $container-padding-mobile-x;
+  word-break: break-word;
+
+  @include tablet-screen {
+    max-width: 520px;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  @include desktope-screen {
+    max-width: 355px;
+    padding-inline: 0;
+    margin-inline: 0;
+    text-align: left;
+  }
+}
+
+.about__title {
+  margin: 0 0 12px;
+  font-family: $font-family-secondary;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 1;
+
+  @include tablet-screen {
+    margin: 0 0 20px;
+    font-size: 42px;
+  }
+
+  @include desktope-screen {
+    margin: 0 0 25px;
+    font-size: 54px;
+  }
+}
+
+.about__subtitle {
+  margin: 0 0 36px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.1;
+
+  @include tablet-screen {
+    font-size: 20px;
+    line-height: 1;
+  }
+
+  @include desktope-screen {
+    margin: 0 0 95px;
+    font-size: 22px;
+  }
+}
+
+.about__content {
+  margin-bottom: 35px;
+
+  @include tablet-screen {
+    margin-bottom: 36px;
+  }
+
+  @include desktope-screen {
+    margin-bottom: 0;
+  }
+}
+
+.about__position-wrapper {
+  position: relative;
+
+  @include desktope-screen {
+    max-height: 515px;
+  }
+}
+
+.about__image {
+  aspect-ratio: 320 / 280;
+  width: 100%;
+  margin-bottom: 36px;
+  background-color: $color-background-block;
+  color: $color-text-dark-background;
+
+  @include tablet-screen {
+    aspect-ratio: 678 / 345;
+    min-height: 345px;
+  }
+
+  @include desktope-screen {
+    width: 660px;
+    height: 400px;
+  }
+}
+
+.about__iframe-container {
+  @include tablet-screen {
+    position: absolute;
+    bottom: -85px;
+    left: 50%;
+    translate: -50% 0;
+  }
+
+  @include desktope-screen {
+    position: absolute;
+    bottom: -79px;
+    left: -100px;
+    translate: none;
+  }
+}

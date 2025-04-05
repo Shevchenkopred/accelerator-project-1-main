@@ -1,0 +1,145 @@
+.footer {
+  padding-block: 40px;
+  background-color: $color-background-footer;
+  color: $color-text-dark-background;
+
+  @include tablet-screen {
+    padding-block: 41px 42px;
+  }
+
+  @include desktope-screen {
+    padding-block: 38px;
+  }
+}
+
+.footer__container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 27px;
+
+  @include tablet-screen {
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 26px;
+  }
+}
+
+.footer__list {
+  @include list-reset;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin-left: -10px;
+
+  @include tablet-screen {
+    column-gap: 15px;
+    margin-left: 0;
+  }
+
+  @include desktope-screen {
+    column-gap: 67px;
+  }
+}
+
+.footer__item {
+  display: flex;
+}
+
+.footer__link {
+  position: relative;
+  padding: 5px 10px;
+  font-weight: 400;
+  line-height: 1.4;
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 50%;
+    bottom: 0;
+    translate: -50% 0;
+    width: calc(100% - 10px * 2);
+    height: 1px;
+    background-color: $color-background-main;
+  }
+
+  &:hover::after {
+    display: block;
+  }
+
+  &:focus::after {
+    display: none;
+  }
+
+  &:focus {
+    outline: 1px solid $color-button-outline-dark-background;
+  }
+
+  &:active {
+    outline: none;
+  }
+
+  &[aria-disabled="true"] {
+    background-color: rgba (255, 255, 255, 0.3);
+  }
+
+  @include tablet-screen {
+    padding: 5px 8px;
+    line-height: 1.57;
+  }
+}
+
+.footer__list-social {
+  @include list-reset;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+
+  @include tablet-screen {
+    column-gap: 15px;
+  }
+
+  @include desktope-screen {
+    column-gap: 10px;
+  }
+}
+
+.footer__item-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  background-color: $color-background-main;
+  color: $color-icon-social;
+  border-radius: 100%;
+  transition: color 0.2s, background-color 0.2s;
+
+  &:hover {
+    background-color: $color-border-underline;
+  }
+
+  &:hover svg,
+  &:focus svg,
+  &:active svg {
+    color: $color-icon-main;
+  }
+
+  &:focus {
+    outline: none;
+    background-color: $color-text-accent;
+  }
+
+  &:active {
+    background-color: $color-background-dark;
+  }
+
+  &[aria-disabled="true"] {
+    background-color: rgba(255, 255, 255, 0.3);
+    pointer-events: none;
+  }
+}
