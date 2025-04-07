@@ -65,7 +65,7 @@ export default {
   build: {
     outDir: '../dist',
   },
-  base: 'accelerator-project-1-main',
+  base: './',
   server: {
     port: 3000,
   }
