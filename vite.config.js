@@ -64,9 +64,8 @@ export default {
   root: './source',
   build: {
     outDir: '../dist',
-    assetsDir: '',
   },
-  base: './',
+  base: 'accelerator-project-1-main',
   server: {
     port: 3000,
   }
